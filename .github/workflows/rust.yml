@@ -107,7 +107,7 @@ jobs:
         with:
           update: true
           msystem: MSYS
-          install: rust cargo openssl-devel libopenssl
+          install: rust openssl-devel libopenssl
 
       - name: Build
         run: |
