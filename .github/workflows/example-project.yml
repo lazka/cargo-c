@@ -149,7 +149,7 @@ jobs:
         with:
           update: true
           msystem: MSYS
-          install: rust pkgconf gcc
+          install: rust pkgconf gcc openssl-devel libopenssl
 
       - name: Install cargo-c applet
         run: cargo install --path .
