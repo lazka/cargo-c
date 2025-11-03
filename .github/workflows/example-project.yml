@@ -164,11 +164,13 @@ jobs:
 
       - name: Test pkgconf
         run: |
-          set -x
+          export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
           pkgconf --version
           test "$(pkgconf --cflags example_project)" = "-I/usr/local/include/example-project-0.1"
           test "$(pkgconf --libs example_project)" = "-L/usr/local/lib -lexample-project"
 
       - name: Test usage from C (using Makefile)
         working-directory: example-project/usage-from-c
-        run: make
+        run: |
+          export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
+          make
